@@ -8,6 +8,7 @@ export const DAFFY_TO_FLOW_NODES = {
   MySQLIntrospectionNode: 'mysql_introspection',
   SupervisorNode: 'supervisor',
   DeepAnalysisNode: 'deep_analysis',
+  PIIDetectorNode: 'pii_detector',
 } as const
 
 export const DAFFY_START = 'START'
@@ -23,6 +24,7 @@ export const FLOW_TO_DAFFY_NODES = {
   mysql_introspection: 'MySQLIntrospectionNode',
   supervisor: 'SupervisorNode',
   deep_analysis: 'DeepAnalysisNode',
+  pii_detector: 'PIIDetectorNode',
 } as const
 
 export const FLOW_TO_DAFFY_TOOLS = {

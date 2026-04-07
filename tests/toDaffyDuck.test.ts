@@ -524,3 +524,51 @@ it('toDaffyDuckAgentsWithFormsAndTools', () => {
     edges: [],
   })
 })
+
+it('toDaffyDuckPIIDetectorNode', () => {
+  expect(toDaffyDuck([
+    {
+      id: 'START',
+      type: 'start',
+      position: { x: 0, y: 0 },
+    },
+    {
+      id: 'node_pii_0',
+      type: 'pii_detector',
+      position: { x: 200, y: 0 },
+      data: {
+        node_name: 'Privacy Layer',
+        enabled: true,
+        mode: 'mask',
+        threshold: 0.5,
+        language: 'it',
+        entities: {
+          PERSON: { enabled: true, operator: 'replace', tag: '<PERSONA>' },
+        },
+      },
+    },
+  ], [
+    { id: 'e1', source: 'START', target: 'node_pii_0' },
+  ])).toStrictEqual({
+    nodes: [
+      {
+        id: 'node_pii_0',
+        node: 'PIIDetectorNode',
+        settings: {
+          node_name: 'Privacy Layer',
+          enabled: true,
+          mode: 'mask',
+          threshold: 0.5,
+          language: 'it',
+          entities: {
+            PERSON: { enabled: true, operator: 'replace', tag: '<PERSONA>' },
+          },
+        },
+        position: { x: 200, y: 0 },
+      },
+    ],
+    edges: [
+      { id: 'e1', source: 'START', target: 'node_pii_0', source_handle: undefined, target_handle: undefined },
+    ],
+  })
+})

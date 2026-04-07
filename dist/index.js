@@ -8,7 +8,8 @@ const DAFFY_TO_FLOW_NODES = {
 	MSSQLIntrospectionNode: "mssql_introspection",
 	MySQLIntrospectionNode: "mysql_introspection",
 	SupervisorNode: "supervisor",
-	DeepAnalysisNode: "deep_analysis"
+	DeepAnalysisNode: "deep_analysis",
+	PIIDetectorNode: "pii_detector"
 };
 const DAFFY_START = "START";
 const DAFFY_END = "END";
@@ -21,7 +22,8 @@ const FLOW_TO_DAFFY_NODES = {
 	mssql_introspection: "MSSQLIntrospectionNode",
 	mysql_introspection: "MySQLIntrospectionNode",
 	supervisor: "SupervisorNode",
-	deep_analysis: "DeepAnalysisNode"
+	deep_analysis: "DeepAnalysisNode",
+	pii_detector: "PIIDetectorNode"
 };
 const FLOW_TO_DAFFY_TOOLS = {
 	mcp: "MCPTool",

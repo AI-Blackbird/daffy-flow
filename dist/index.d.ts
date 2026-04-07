@@ -11,6 +11,7 @@ declare const DAFFY_TO_FLOW_NODES: {
   readonly MySQLIntrospectionNode: "mysql_introspection";
   readonly SupervisorNode: "supervisor";
   readonly DeepAnalysisNode: "deep_analysis";
+  readonly PIIDetectorNode: "pii_detector";
 };
 declare const DAFFY_START = "START";
 declare const DAFFY_END = "END";
@@ -24,6 +25,7 @@ declare const FLOW_TO_DAFFY_NODES: {
   readonly mysql_introspection: "MySQLIntrospectionNode";
   readonly supervisor: "SupervisorNode";
   readonly deep_analysis: "DeepAnalysisNode";
+  readonly pii_detector: "PIIDetectorNode";
 };
 declare const FLOW_TO_DAFFY_TOOLS: {
   readonly mcp: "MCPTool";
